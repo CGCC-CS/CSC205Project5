@@ -20,10 +20,10 @@ public class PlayingCard {
 	
 	public PlayingCard (String rank, String suit)
 	{
-		
 		this.rank = find_entry(rank, ranks);
 		this.suit = find_entry(suit, suits);
 	}	
+	
 	private static int find_entry(String value, String values[]) 
 	{
 		int ret = 0;
@@ -49,6 +49,7 @@ public class PlayingCard {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+	
 	public void setRank(String rank) {
 		this.rank = find_entry(rank, ranks);
 	}
