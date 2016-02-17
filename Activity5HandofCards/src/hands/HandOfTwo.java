@@ -2,6 +2,7 @@ package hands;
 
 import cards.PlayingCard;
 
+// HandOfTwo is a class implementing a hand of 2 cards using 2 variables
 public class HandOfTwo implements HandOfCards {
 
 	PlayingCard card1;

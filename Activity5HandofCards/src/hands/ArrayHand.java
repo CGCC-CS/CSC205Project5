@@ -2,6 +2,7 @@ package hands;
 
 import cards.PlayingCard;
 
+//ArrayHand is a class implementing a hand of cards using an array
 public class ArrayHand implements HandOfCards {
 
 	private PlayingCard hand[];
@@ -23,6 +24,7 @@ public class ArrayHand implements HandOfCards {
 		if (count < hand.length) {
 			hand[count] = c;
 		}
+		// else hand is full so do nothing
 	}
 
 	@Override
