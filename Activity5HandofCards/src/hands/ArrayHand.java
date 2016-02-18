@@ -13,9 +13,9 @@ public class ArrayHand implements HandOfCards {
 	}
 	
 	public ArrayHand (int length) {
-		count = length;
-		hand = new PlayingCard[count];
-		for (int ii=0;ii<count;ii++)
+		count = 0;
+		hand = new PlayingCard[length];
+		for (int ii=0;ii<length;ii++)
 			hand[ii] = null;
 	}
 	
@@ -23,6 +23,7 @@ public class ArrayHand implements HandOfCards {
 	public void addCard(PlayingCard c) {
 		if (count < hand.length) {
 			hand[count] = c;
+			count ++;
 		}
 		// else hand is full so do nothing
 	}
