@@ -1,6 +1,5 @@
 import cards.*;
-import hands.HandOfCards;
-import hands.HandOfTwo;
+import hands.*;
 
 public class Activity5 {
 
