@@ -49,8 +49,8 @@ public class PlayingCard {
 	public void chooseRandomCardValue()	
 	{
 		Random randNum = new Random();
-		rank = randNum.nextInt(ranks.length) + 1;
-		suit = randNum.nextInt(suits.length) + 1;
+		rank = randNum.nextInt(ranks.length-1) + 1;
+		suit = randNum.nextInt(suits.length-1) + 1;
 	}
 	
 	// Getters 
