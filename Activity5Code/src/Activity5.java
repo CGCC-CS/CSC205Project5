@@ -9,8 +9,6 @@ public class Activity5 {
 		
 		hand.addCard(d.dealOne());
 		hand.addCard(d.dealOne());
-		hand.addCard(d.dealOne());
-		hand.addCard(d.dealOne());
 
 		System.out.println("Hand :");
 		hand.printHand();
