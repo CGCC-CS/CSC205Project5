@@ -1,13 +1,11 @@
 package cards;
-// Card class
-// Constructor creates a joker, deal() method sets a rank & suit.
 import java.util.Random;
 
 public class PlayingCard {
 
-	private final static String suits[] = {"None", "Hearts", "Spades", "Diamonds", "Clubs"};
-	private final static String ranks[] = {"Joker", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", 
-											"10", "Jack", "Queen", "King"};
+	private final static String suits[] = {"None", "H", "S", "D", "C"};
+	private final static String ranks[] = {"Joker", "A", "2", "3", "4", "5", "6", "7", "8", "9", 
+											"10", "J", "Q", "K"};
 	private int rank;
 	private int suit;
 	
@@ -46,7 +44,7 @@ public class PlayingCard {
 		return ret;
 	}
 
-	public void chooseRandomCardValue()	
+	private void chooseRandomCardValue()	
 	{
 		Random randNum = new Random();
 		rank = randNum.nextInt(ranks.length-1) + 1;
@@ -60,11 +58,17 @@ public class PlayingCard {
 	public int getSuit() {
 		return suit;
 	}
+	public String getRankName() {
+		return ranks[rank];
+	}
+	public String getSuitName() {
+		return suits[suit];
+	}
 	
 	// Allow card to be printed nicely
 	public String toString ()
 	{
-		return (ranks[rank] + " of " + suits[suit]);
+		return ("" + ranks[rank] + suits[suit]);
 	}
 	
 }
