@@ -27,5 +27,4 @@ public class HandOfTwo implements HandOfCards {
 		if (card2 != null)
 			System.out.println("Card 2: " + card2);
 	}
-
 }
