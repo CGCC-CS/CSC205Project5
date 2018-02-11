@@ -1,47 +1,38 @@
 package cards;
-// Card class
-// Constructor creates a joker, deal() method sets a rank & suit.
 import java.util.Random;
 
 public class PlayingCard {
 
-	public final static String suits[] = {"None", "Hearts", "Spades", "Diamonds", "Clubs"};
-	public final static String ranks[] = {"Joker", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", 
-											"10", "Jack", "Queen", "King"};
+	private final static String suits[] = {"None", "H", "S", "D", "C"};
+	private final static String ranks[] = {"Joker", "A", "2", "3", "4", "5", "6", "7", "8", "9", 
+											"10", "J", "Q", "K"};
 	private int rank;
 	private int suit;
 	
-	/**
-	 * Default constructor sets the card to a random value
-	 */
+	// Default constructor 
 	public PlayingCard ()
 	{
-		// Set each data member to a random number between 1 and length-1
-		Random randNum = new Random();
-		this.setRank(randNum.nextInt(ranks.length-1) + 1);
-		this.setSuit(randNum.nextInt(suits.length-1) + 1);
+		chooseRandomCardValue();
 	}
 	
-	/**
-	 * Constructor with String values
-	 * 
-	 * @param rank the rank name
-	 * @param suit the suit name
-	 */
+	public PlayingCard (int rank, int suit)
+	{
+		this.rank = 0;
+		this.suit = 0;
+		if ( (suit > 0) && (suit < suits.length) ) {
+			if ( (rank > 0) && (rank < ranks.length) ) {
+				this.suit = suit;
+				this.rank = rank;
+			}
+		}
+	}
+	
 	public PlayingCard (String rank, String suit)
 	{
-		
 		this.rank = find_entry(rank, ranks);
 		this.suit = find_entry(suit, suits);
 	}	
 	
-	/**
-	 * Find the index of an entry in an array
-	 * 
-	 * @param value   the entry to search for
-	 * @param values  array to search
-	 * @return        index of the value in values (0 default)
-	 */
 	private static int find_entry(String value, String values[]) 
 	{
 		int ret = 0;
@@ -52,50 +43,32 @@ public class PlayingCard {
 		}
 		return ret;
 	}
-	
-	/**
-	 * Constructor with int values
-	 * 
-	 * @param rank the rank index
-	 * @param suit the suit index
-	 */
-	public PlayingCard (int rank, int suit)
+
+	private void chooseRandomCardValue()	
 	{
-		// Use setters instead of directly assigning so that any logic
-		//   validating the values can reside in one place.
-		this.setRank(rank);
-		this.setSuit(suit);
+		Random randNum = new Random();
+		rank = randNum.nextInt(ranks.length-1) + 1;
+		suit = randNum.nextInt(suits.length-1) + 1;
 	}
-
-
-	// Getters & Setters
+	
+	// Getters 
 	public int getRank() {
 		return rank;
-	}
-	public void setRank(int rank) {
-		this.rank = rank % ranks.length;
-	}
-	public void setRank(String rank) {
-		this.rank = find_entry(rank, ranks);
 	}
 	public int getSuit() {
 		return suit;
 	}
-	public void setSuit(int suit) {
-		this.suit = suit % suits.length;
+	public String getRankName() {
+		return ranks[rank];
 	}
-	public void setSuit(String suit) {
-		this.suit = find_entry(suit, suits);
+	public String getSuitName() {
+		return suits[suit];
 	}
 	
-	/**
-	 * Return string representation of the Card
-	 * 
-	 * @return string in the form "rank of suit"
-	 */
+	// Allow card to be printed nicely
 	public String toString ()
 	{
-		return (ranks[rank] + " of " + suits[suit]);
+		return ("" + ranks[rank] + suits[suit]);
 	}
 	
 }

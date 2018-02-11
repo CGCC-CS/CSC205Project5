@@ -30,7 +30,7 @@ public class ArrayHand implements HandOfCards {
 
 	@Override
 	public void print() {
-		for (int ii=0; ii<hand.length; ii++) {
+		for (int ii=0; ii<count; ii++) {
 			System.out.println("Card " + ii + ": " + hand[ii]);
 		}
 	}
