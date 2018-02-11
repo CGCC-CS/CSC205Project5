@@ -7,11 +7,11 @@ public class Activity5 {
 		Deck d = new Deck(52);
 		HandOfCards hand = new HandOfTwo();
 		
-		hand.addCard(d.dealOne());
-		hand.addCard(d.dealOne());
+		hand.add(d.dealOne());
+		hand.add(d.dealOne());
 
 		System.out.println("Hand :");
-		hand.printHand();
+		hand.print();
 	}
 	
 }

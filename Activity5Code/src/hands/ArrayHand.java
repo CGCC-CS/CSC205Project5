@@ -20,7 +20,7 @@ public class ArrayHand implements HandOfCards {
 	}
 	
 	@Override
-	public void addCard(PlayingCard c) {
+	public void add(PlayingCard c) {
 		if (count < hand.length) {
 			hand[count] = c;
 			count ++;
@@ -29,7 +29,7 @@ public class ArrayHand implements HandOfCards {
 	}
 
 	@Override
-	public void printHand() {
+	public void print() {
 		for (int ii=0; ii<hand.length; ii++) {
 			System.out.println("Card " + ii + ": " + hand[ii]);
 		}
