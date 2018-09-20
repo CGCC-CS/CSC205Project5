@@ -5,7 +5,7 @@ public class Activity5 {
 
 	public static void main(String[] args) {
 		Deck d = new Deck(52);
-		HandOfCards hand = new ArrayHand();
+		HandOfTwo hand = new HandOfTwo();
 		
 		hand.add(d.dealOne());
 		hand.add(d.dealOne());
