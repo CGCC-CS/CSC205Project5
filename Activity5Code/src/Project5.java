@@ -1,7 +1,7 @@
 import cards.*;
 import hands.*;
 
-public class Activity5 {
+public class Project5 {
 
 	public static void main(String[] args) {
 		Deck d = new Deck(52);
