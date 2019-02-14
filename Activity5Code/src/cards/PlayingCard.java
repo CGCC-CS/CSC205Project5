@@ -71,4 +71,13 @@ public class PlayingCard {
 		return ("" + ranks[rank] + suits[suit]);
 	}
 	
+	public int getValue() {
+		int ret = 0;
+		if (rank == 1)
+			ret = 11;
+		else
+			ret = Math.min(rank, 10);
+		return ret;
+	}
+
 }
