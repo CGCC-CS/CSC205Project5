@@ -29,4 +29,14 @@ public class HandOfTwo implements HandOfCards {
 		if (card2 != null)
 			System.out.println("Card 2: " + card2);
 	}
+
+	@Override
+	public int getValue() {
+		int value = 0;
+		if (card1 != null)
+			value += card1.getValue();
+		if (card2 != null)
+			value += card2.getValue();
+		return value;
+	}
 }

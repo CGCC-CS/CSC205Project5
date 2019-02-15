@@ -34,4 +34,13 @@ public class ArrayHand implements HandOfCards {
 			System.out.println("Card " + ii + ": " + hand[ii]);
 		}
 	}
+
+	@Override
+	public int getValue() {
+		int sum = 0;
+		for (int ii=0; ii<count; ii++) {
+			sum += hand[ii].getValue();
+		}
+		return sum;
+	}
 }
