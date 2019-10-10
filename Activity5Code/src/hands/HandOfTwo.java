@@ -1,6 +1,7 @@
 package hands;
 
 import cards.PlayingCard;
+import hands.HandOfCards;
 
 // HandOfTwo is a class implementing a hand of 2 cards using 2 variables
 public class HandOfTwo implements HandOfCards {
@@ -13,7 +14,6 @@ public class HandOfTwo implements HandOfCards {
 		card2 = null;
 	}
 
-	@Override
 	public void add(PlayingCard c) {
 		if (card1 == null)
 			card1 = c;
@@ -22,7 +22,6 @@ public class HandOfTwo implements HandOfCards {
 		// else hand is full, do nothing
 	}
 
-	@Override
 	public void print() {
 		if (card1 != null)
 			System.out.println("Card 1: " + card1);
@@ -32,11 +31,14 @@ public class HandOfTwo implements HandOfCards {
 
 	@Override
 	public int getValue() {
-		int value = 0;
-		if (card1 != null)
-			value += card1.getValue();
-		if (card2 != null)
-			value += card2.getValue();
-		return value;
+		int total = 0;
+		if (card1 != null) {
+			total += card1.getValue();
+		}
+		if (card2 != null) {
+			total += card2.getValue();
+		}
+		return total;
 	}
+
 }

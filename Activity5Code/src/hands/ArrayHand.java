@@ -1,6 +1,7 @@
 package hands;
 
 import cards.PlayingCard;
+import hands.HandOfCards;
 
 //ArrayHand is a class implementing a hand of cards using an array
 public class ArrayHand implements HandOfCards {
@@ -30,17 +31,17 @@ public class ArrayHand implements HandOfCards {
 
 	@Override
 	public void print() {
-		for (int ii=0; ii<count; ii++) {
+		for (int ii=0; ii<hand.length; ii++) {
 			System.out.println("Card " + ii + ": " + hand[ii]);
 		}
 	}
 
 	@Override
 	public int getValue() {
-		int sum = 0;
-		for (int ii=0; ii<count; ii++) {
-			sum += hand[ii].getValue();
+		int total = 0;
+		for (int ii=0; ii<hand.length; ii++) {
+			total += hand[ii].getValue();
 		}
-		return sum;
+		return total;
 	}
 }
