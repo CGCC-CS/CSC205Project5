@@ -14,6 +14,7 @@ public class HandOfTwo implements HandOfCards {
 		card2 = null;
 	}
 
+	@Override
 	public void add(PlayingCard c) {
 		if (card1 == null)
 			card1 = c;
@@ -22,6 +23,7 @@ public class HandOfTwo implements HandOfCards {
 		// else hand is full, do nothing
 	}
 
+	@Override
 	public void print() {
 		if (card1 != null)
 			System.out.println("Card 1: " + card1);

@@ -13,7 +13,7 @@ public class ArrayHand implements HandOfCards {
 		this(2);
 	}
 	
-	public ArrayHand (int length) {
+	public ArrayHand(int length) {
 		count = 0;
 		hand = new PlayingCard[length];
 		for (int ii=0;ii<length;ii++)
